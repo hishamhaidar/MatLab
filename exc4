@@ -1,0 +1,15 @@
+clear
+syms x y
+%parabola equation
+P(x,y)= x^2 - 2*x*y + y^2 + 4*x - 8*y + 20 ;
+% line x=1;
+f= -4*x + 4;
+axis equal;hold on;
+fimplicit(P);
+fimplicit(f);
+
+%intersection point
+e=[P==0,f==0];
+s=solve(e,[x,y]);
+I=[s.x,s.y];
+plot(I(1),I(2),'*r','MarkerSize',10);
