@@ -1,0 +1,9 @@
+clear
+syms x y z
+F(x,y)= sqrt(1 - x^2 - 0.5*y^2) ;
+f(x,y,z) = F(x,y)-z;
+fimplicit3(f);
+axis equal;hold on;
+px=0.5;py=0.2;
+pz=F(px,py);
+plot3(px,py,pz,'*r','MarkerSize',20);
