@@ -31,9 +31,9 @@ cv=[cxd(u0),cyd(u0),czd(u0)];
 
 quiver3(P(1),P(2),P(3),cv(1),cv(2),cv(3),'LineWidth',3);
 
-dxd(u)=diff(dx,u);
-dyd(u)=diff(dy,u);
-dzd(u)=diff(dz,u);
+dxd(v)=diff(dx,v);
+dyd(v)=diff(dy,v);
+dzd(v)=diff(dz,v);
 dv=[dxd(u0),dyd(u0),dzd(u0)];
 
 quiver3(P(1),P(2),P(3),dv(1),dv(2),dv(3),'LineWidth',3);
