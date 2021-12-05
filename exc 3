@@ -1,0 +1,11 @@
+clear
+syms x y z 
+%surface equation
+F(x,y,z)= sin(x) + cos(y)/x -z;
+axis equal;hold on;
+% z=0 for intersection
+G(x,y)= sin(x) + cos(y)/x ;
+%draw surface 
+fimplicit3(F,'LineWidth', 3);
+%draw intersection with x-y plane
+fimplicit(G,'r','LineWidth', 3);
