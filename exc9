@@ -55,32 +55,37 @@ quiver(px(3), py(3), vx, vy);
 %points
 qx=[px(4) 14];
 qy=[py(4) -4];
-%vector 
-ux=[vx 3];
-uy=[vy 0];
+% tangent at last point
+v2x=(cxd(3));
+v2y=(cyd(3));
+quiver(px(4), py(4), v2x, v2y);
+%vector
+ux=[1/4*v2x 3];
+uy=[1/4*v2y 0];
+
 %%t
-t3=-1;t4=1;
+t5=-1;t6=1;
 %draw
 plot(qx, qy, 'b.', 'Markersize', 10);
 quiver(qx(1),qy(1),ux(1),uy(1));
 quiver(qx(2),qy(2),ux(2),uy(2));
 %for x
-e2x = [x(t3) == qx(1), ...
-      x(t4) == qx(2), ...
-      xd(t3) == ux(1), ...
-      xd(t4) == ux(2)];
+e2x = [x(t5) == qx(1), ...
+      x(t6) == qx(2), ...
+      xd(t5) == ux(1), ...
+      xd(t6) == ux(2)];
 s2x = solve(e2x, [a3 a2 a1 a0]);
 
 c2x(t) = subs (x, [a3 a2 a1 a0], [s2x.a3 s2x.a2 s2x.a1 s2x.a0]);
 
 %for y
-e2y = [y(t3) == qy(1), ...
-      y(t4) == qy(2), ...
-      yd(t3) == uy(1), ...
-      yd(t4) == uy(2)];
+e2y = [y(t5) == qy(1), ...
+      y(t6) == qy(2), ...
+      yd(t5) == uy(1), ...
+      yd(t6) == uy(2)];
 s2y = solve(e2y, [b3 b2 b1 b0]);
 
 c2y(t) = subs (y, [b3 b2 b1 b0], [s2y.b3 s2y.b2 s2y.b1 s2y.b0]);
 
 %Draw It!
-fplot (c2x, c2y, [t3,t4],'g');
+fplot (c2x, c2y, [t5,t6],'g');
