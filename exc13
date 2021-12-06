@@ -42,8 +42,8 @@ quiver (px(5), py(5), v1x, v1y);
 % question 13 start here
 rx=[px(5) 20];
 ry=[py(5) -40];
-ux = [v1x, 60];
-uy = [v1y, 0];
+ux = [-60, 60];
+uy = [-20, 0];
 %Draw Input
 plot(rx, ry, '*');
 quiver (rx(1), ry(1), ux(1), uy(1));
@@ -75,3 +75,5 @@ cy(t) = subs(y, [b3 b2 b1 b0], [s.b3 s.b2 s.b1 s.b0]);
 
 %Draw it!
 fplot(cx, cy, [t0 t1], 'k');
+%%  it is a G 1 continuity because the tangent vector has
+%%  same direction but different magnitude
